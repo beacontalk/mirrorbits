@@ -61,7 +61,7 @@ _Previous projects which have used Mirrorbits:_
 * Redis 3.2 or later (with [persistence](https://redis.io/topics/persistence) enabled)
 * GeoIP2 databases from [Maxmind](https://dev.maxmind.com/geoip/geoip2/geolite2/) (preferably updated regularly)
 
-:warning: **GeoIP-legacy is not supported anymore, please use the new GeoIP2 mmdb databases!**
+:warning: **GeoIP-legacy is not supported any more, please use the new GeoIP2 mmdb databases!**
 
 **Optional:**
 
@@ -73,28 +73,56 @@ Before upgrading to the latest version, please check [this guide](https://github
 
 ## Installation
 
-You can either get a [prebuilt version](https://github.com/etix/mirrorbits/releases) or choose to build it yourself.
+You can either get a [pre-built version](https://github.com/etix/mirrorbits/releases), [Docker image](https://github.com/etix/mirrorbits/wiki/Running-within-Docker), [Debian package](https://packages.debian.org/unstable/net/mirrorbits) or choose to build it yourself.
 
-### Docker
+For more information see the [Quick start wiki page](https://github.com/etix/mirrorbits/wiki/Quick-Start).
 
-A docker "quick start" can be found [on the wiki](https://github.com/etix/mirrorbits/wiki/Running-within-Docker).
+### Pre-built Version
 
-### Manual build
+:warning: _The latest pre-built version at times will be behind:_
+
+```
+wget $(wget https://api.github.com/repos/etix/mirrorbits/releases/latest -O -2>/dev/null|grep browser_download_ur|cut -d'"' -f4)
+tar -xvf mirrorbits-v*.tar.gz
+cd mirrorbits/
+```
+
+### Docker Image
+
+Mirrorbits does not yet have an official image. _The next release will be supported._
+
+A docker "quick start" can be found [on the wiki](https://github.com/etix/mirrorbits/wiki/Running-within-Docker) showing how to build it locally.
+
+### Debian Package
+
+[Debian](https://www.debian.org/) has Mirrorbits [package](https://packages.debian.org/unstable/net/mirrorbits) ready to go:
+
+```
+sudo apt install mirrorbits
+```
+
+### Manual Build
+
+Debian-based OS need the following packages pre-install:
+
+```
+sudo apt install build-essential golang geoipupdate redis-server protobuf-compiler
+```
 
 Go >= 1.11:
 
 ```
-$ git clone https://github.com/etix/mirrorbits.git
-$ cd mirrorbits
-$ sudo make install
+git clone https://github.com/etix/mirrorbits.git
+cd mirrorbits
+sudo make install
 ```
 
 Go < 1.11:
 
 ```
-$ go get -u github.com/etix/mirrorbits
-$ cd $GOPATH/src/github.com/etix/mirrorbits
-$ sudo make install
+go get -u github.com/etix/mirrorbits
+cd $GOPATH/src/github.com/etix/mirrorbits
+sudo make install
 ```
 
 The resulting executable should now live in your */usr/local/bin* directory. You can also specify a `PREFIX` or `DESTDIR` if necessary:
