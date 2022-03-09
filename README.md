@@ -169,7 +169,7 @@ proxy_set_header X-Forwarded-For $remote_addr;
 
 # We're social!
 
-The best place to discuss about mirrorbits is to join the #VideoLAN IRC channel on Freenode.  
+The best place to discuss about Mirrorbits is to join the [#VideoLAN IRC channel](https://wiki.videolan.org/Contact_VideoLAN/#IRC) on [libera.chat](https://libera.chat/).
 For the latest news, you can follow [@mirrorbits](http://twitter.com/mirrorbits) on Twitter.
 
 # License MIT
