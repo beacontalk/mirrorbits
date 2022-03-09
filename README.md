@@ -135,6 +135,27 @@ sudo make install PREFIX=/usr
 
 A sample configuration file can be found [here](mirrorbits.conf).
 
+You will need to update *mirrorbits.conf* to your environment.
+Example of items which may need to updated:
+
+* `Repository: /srv/repo`
+* `GeoipDatabasePath: /var/lib/GeoIP` (if using Debian packages)
+* `RedisAddress: 127.0.0.1:6379` (if Redis on the same machine as Mirrorbits)
+
+```
+sudo cp -n mirrorbits.conf /etc/mirrorbits.conf
+sudo vi /etc/mirrorbits.conf
+sudo mkdir -p /srv/repo
+```
+
+You may need to update *GeoIP.conf* to use your `AccountID` and `LicenseKey` from [here](https://www.maxmind.com/en/my_license_key).
+You also may need to enable `City` and `ASN` for **EditionIDs**:
+
+```
+sudo vi /etc/GeoIP.conf
+sudo geoipupdate
+```
+
 ## Running
 
 Mirrorbits is a self-contained application and can act, at the same time, as the server and the cli.
