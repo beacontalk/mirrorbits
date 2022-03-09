@@ -35,6 +35,7 @@ Mirrorbits is a geographical download redirector written in [Go](https://golang.
 ## Is it production ready?
 
 **Yes!** Mirrorbits has served **billions** of files already and is known to be running in production at:
+
 * [CarbonROM](https://carbonrom.org/)
 * [Chaos Computer Club](https://media.ccc.de/) to distribute media
 * [Jellyfin](https://jellyfin.org/) since [April 2021](https://jellyfin.org/posts/mirrorbits-cdn/)
@@ -81,8 +82,8 @@ A docker "quick start" can be found [on the wiki](https://github.com/etix/mirror
 
 ### Manual build
 
-
 Go >= 1.11:
+
 ```
 $ git clone https://github.com/etix/mirrorbits.git
 $ cd mirrorbits
@@ -90,6 +91,7 @@ $ sudo make install
 ```
 
 Go < 1.11:
+
 ```
 $ go get -u github.com/etix/mirrorbits
 $ cd $GOPATH/src/github.com/etix/mirrorbits
@@ -97,6 +99,7 @@ $ sudo make install
 ```
 
 The resulting executable should now live in your */usr/local/bin* directory. You can also specify a `PREFIX` or `DESTDIR` if necessary:
+
 ```
 sudo make install PREFIX=/usr
 ```
@@ -110,22 +113,26 @@ A sample configuration file can be found [here](mirrorbits.conf).
 Mirrorbits is a self-contained application and can act, at the same time, as the server and the cli.
 
 To run the server:
+
 ```
 mirrorbits daemon
 ```
 Additional options can be found with ```mirrorbits -help```.
 
 To run the cli:
+
 ```
 mirrorbits help
 ```
 
 Add a mirror:
+
 ```
 mirrorbits add -ftp="ftp://ftp.mirrors.example/myproject/" -http="http://ftp.mirrors.example/myproject/" mirrors.example
 ```
 
 Enable the mirror:
+
 ```
 mirrorbits enable mirrors.example
 ```
@@ -145,6 +152,7 @@ Multiple instances of mirrorbits can be started simultanously on different serve
 ## Upgrading
 
 Mirrorbits has a mode called *seamless binary upgrade* to upgrade the server executable at runtime without service disruption. Once the binary has been replaced on the filesystem just issue the following command in the cli:
+
 ```
 mirrorbits upgrade
 ```
@@ -152,9 +160,11 @@ mirrorbits upgrade
 ## Considerations
 
 * When configured in redirect mode, Mirrorbits can easily serve client requests directly but it is usually recommended to set it behind a reverse proxy like nginx. In this case take care to pass the IP address of the client within a X-Forwarded-For header:
+
 ```
 proxy_set_header X-Forwarded-For $remote_addr;
 ```
+
 * It is advised to never cache requests intended for Mirrorbits since each request is supposed to be unique, caching the result might have unexpected consequences.
 
 # We're social!
