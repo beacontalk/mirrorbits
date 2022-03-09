@@ -242,7 +242,7 @@ mirrorbits upgrade
 
 ## Considerations
 
-* When configured in redirect mode, Mirrorbits can easily serve client requests directly but it is usually recommended to set it behind a reverse proxy like [Nginx](https://www.nginx.com/). In this case take care to pass the IP address of the client within a X-Forwarded-For header:
+* When configured in redirect mode, Mirrorbits can easily serve client requests directly but it is usually recommended to set it behind a reverse proxy like [Nginx](https://www.nginx.com/). In this case take care to pass the IP address of the client within a *X-Forwarded-For* header:
 
 ```
 proxy_set_header X-Forwarded-For $remote_addr;
