@@ -230,7 +230,7 @@ Mirror statistics are available by querying Mirrorbits with the `?mirrorstats` a
 
 ## Clustering / High availability
 
-Multiple instances of Mirrorbits can be started simultanously on different servers, discovery of other nodes should be automatic as long as all the instances are connected to the same redis server. In addition to the clustering it is advised to use redis-sentinel to monitor the database and gracefuly handle failover.
+Multiple instances of Mirrorbits can be started simultaneously on different servers, discovery of other nodes should be automatic as long as all the instances are connected to the same Redis server. In addition to the clustering it is advised to use redis-sentinel to monitor the database and gracefully handle failover.
 
 ## Upgrading
 
