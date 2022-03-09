@@ -16,17 +16,17 @@ Mirrorbits is a geographical download redirector written in [Go](https://golang.
 * Response can be either JSON or HTTP redirect
 * Support partial repositories
 * Complete checksum / size control
-* Realtime monitoring and reports
+* Real-time monitoring and reports
 * Disable misbehaving mirrors without human intervention
-* Realtime decision making based on location, AS number and defined rules
+* Real-time decision making based on location, AS number and defined rules
 * Smart load-balancing over multiple mirrors in the same area to avoid hotspots
 * Ability to adjust the weight of each mirror
 * Limit access to a country, region or ASN for any mirror
 * Clustering (multiple mirrorbits instances)
 * High-availability using redis-sentinel
 * Automatically fix timezone offsets for broken mirrors
-* Realtime statistics per file / mirror / date
-* Realtime reconfiguration
+* Real-time statistics per file / mirror / date
+* Real-time reconfiguration
 * Seamless binary upgrade (aka zero downtime upgrade)
 * [Mirmon](http://www.staff.science.uu.nl/~penni101/mirmon/) support
 * Full **IPv6** support
@@ -137,11 +137,11 @@ Enable the mirror:
 mirrorbits enable mirrors.example
 ```
 
-### Realtime file availability
+### Real-time file availability
 
-By appending `?mirrorlist` to any file served by mirrorbits, you'll be able to get some useful realtime informations about the given file. You can see a [live example here](https://get.videolan.org/vlc/2.2.4/win32/vlc-2.2.4-win32.exe?mirrorlist).
+By appending `?mirrorlist` to any file served by mirrorbits, you'll be able to get some useful real-time informations about the given file. You can see a [live example here](https://get.videolan.org/vlc/2.2.4/win32/vlc-2.2.4-win32.exe?mirrorlist).
 
-### Realtime mirrors statistics
+### Real-time mirrors statistics
 
 Mirror statistics are available by querying mirrorbits with the `?mirrorstats` argument. You can see a [live example here](https://get.videolan.org/?mirrorstats).
 
