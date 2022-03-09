@@ -1,8 +1,7 @@
 [![Build Status](https://travis-ci.org/etix/mirrorbits.svg?branch=master)](https://travis-ci.org/etix/mirrorbits)
 [![Go Report Card](https://goreportcard.com/badge/github.com/etix/mirrorbits)](https://goreportcard.com/report/github.com/etix/mirrorbits)
 
-Mirrorbits
-===========
+# Mirrorbits
 
 Mirrorbits is a geographical download redirector written in [Go](https://golang.org) for distributing files efficiently across a set of mirrors. It offers a simple and economic way to create a Content Delivery Network layer using a pure software stack. It is primarily designed for the distribution of large-scale Open-Source projects with a lot of traffic.
 
