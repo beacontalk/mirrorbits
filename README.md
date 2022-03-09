@@ -156,22 +156,48 @@ sudo vi /etc/GeoIP.conf
 sudo geoipupdate
 ```
 
+## Database
+
+Make sure Redis is running:
+
+```
+systemctl enable --now redis-server
+```
+
 ## Running
 
 Mirrorbits is a self-contained application and can act, at the same time, as the server and the cli.
 
-To run the server:
+### Daemon
+
+To run the server in the foreground:
 
 ```
 mirrorbits daemon
 ```
-Additional options can be found with ```mirrorbits -help```.
+
+Using Mirrorbits with systemd to run in the background and at start-up:
+
+```
+systemctl enable --now mirrorbits
+```
+
+### Help
 
 To run the cli:
 
 ```
 mirrorbits help
 ```
+
+Additional options can be found with:
+
+```
+mirrorbits -help
+mirrorbits <command> -help
+```
+
+### Adding mirror
 
 Add a mirror:
 
@@ -183,6 +209,15 @@ Enable the mirror:
 
 ```
 mirrorbits enable mirrors.example
+```
+
+### Mirror status
+
+Check the mirror:
+
+```
+mirrorbits list
+mirrorbits show mirrors.example
 ```
 
 ### Real-time file availability
