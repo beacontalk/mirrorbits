@@ -22,7 +22,7 @@ Mirrorbits is a geographical download redirector written in [Go](https://golang.
 * Smart load-balancing over multiple mirrors in the same area to avoid hotspots
 * Ability to adjust the weight of each mirror
 * Limit access to a country, region or ASN for any mirror
-* Clustering (multiple mirrorbits instances)
+* Clustering (multiple Mirrorbits instances)
 * High-availability using redis-sentinel
 * Automatically fix timezone offsets for broken mirrors
 * Real-time statistics per file / mirror / date
@@ -139,15 +139,15 @@ mirrorbits enable mirrors.example
 
 ### Real-time file availability
 
-By appending `?mirrorlist` to any file served by mirrorbits, you'll be able to get some useful real-time informations about the given file. You can see a [live example here](https://get.videolan.org/vlc/2.2.4/win32/vlc-2.2.4-win32.exe?mirrorlist).
+By appending `?mirrorlist` to any file served by Mirrorbits, you'll be able to get some useful real-time informations about the given file. You can see a [live example here](https://get.videolan.org/vlc/2.2.4/win32/vlc-2.2.4-win32.exe?mirrorlist).
 
 ### Real-time mirrors statistics
 
-Mirror statistics are available by querying mirrorbits with the `?mirrorstats` argument. You can see a [live example here](https://get.videolan.org/?mirrorstats).
+Mirror statistics are available by querying Mirrorbits with the `?mirrorstats` argument. You can see a [live example here](https://get.videolan.org/?mirrorstats).
 
 ## Clustering / High availability
 
-Multiple instances of mirrorbits can be started simultanously on different servers, discovery of other nodes should be automatic as long as all the instances are connected to the same redis server. In addition to the clustering it is advised to use redis-sentinel to monitor the database and gracefuly handle failover.
+Multiple instances of Mirrorbits can be started simultanously on different servers, discovery of other nodes should be automatic as long as all the instances are connected to the same redis server. In addition to the clustering it is advised to use redis-sentinel to monitor the database and gracefuly handle failover.
 
 ## Upgrading
 
